@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 	<head>
 		<meta charset="utf-8">
 
@@ -16,9 +16,12 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<script src="js/Chart.js"></script>
+		<script src="js/angular.js"></script>
+
 	</head>
 
-	<body>
+	<body ng-controller="MainCtrl">
 		<div>
 			<header>
 				<h1>index</h1>
@@ -42,5 +45,9 @@
 				</p>
 			</footer>
 		</div>
+		<div style="width: 100%">
+			<canvas id="canvas" height="900" width="1200"></canvas>
+		</div>
+		<script src="app/app.js"></script>
 	</body>
 </html>
