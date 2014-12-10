@@ -1,17 +1,11 @@
 Dashboard-Demo
 ==============
 
-This is for demonstrating light version of dashboard
-
-<snippet>
-  <content><![CDATA[
-# ${1:Project Name}
- 
-TODO: Write a project description
+This is for demonstrating light version of dashboard.
  
 ## Installation
  
-TODO: Describe the installation process
+Download this project as a zip file and unzip it into your local web sever
  
 ## Usage
  
@@ -36,6 +30,3 @@ TODO: Write credits
 ## License
  
 TODO: Write license
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
