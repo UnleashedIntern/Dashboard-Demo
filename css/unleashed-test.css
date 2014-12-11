@@ -1,5 +1,16 @@
 .navbar {
 	background-color: #e02121;
+	margin-bottom: 20px
+}
+
+body {
+	margin-top: 50px;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
 }
 
 /* title */
