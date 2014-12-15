@@ -125,3 +125,7 @@ app.controller('PurchaseCtrl', function($scope){
 	    });
 	});
 });
+
+app.controller( 'timeCtrl', ['$scope', function($scope) {
+    $scope.date = new Date();
+}]);
