@@ -94,5 +94,11 @@ body {
 
 #guide-bar {
 	padding: 7px;
+	color: #b1b1b1;
+}
+
+#guide-bar:active,
+#guide-bar:hover {
+	color: blue;
 }
 
