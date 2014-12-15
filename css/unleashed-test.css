@@ -7,12 +7,13 @@ body {
 	margin-top: 50px;
 }
 
+/*
 @media(min-width:768px) {
     body {
         margin-top: 50px;
     }
 }
-
+*/
 /* title */
 .navbar-inverse .navbar-brand {
     color: #fff;
@@ -65,7 +66,7 @@ body {
 .navbar-inverse .navbar-toggle .icon-bar {
     background-color: #fff;
 }
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
         color: #fff;
     }
@@ -74,7 +75,7 @@ body {
         color: #fff;
     }
 }
-
+*/
 #side-icon {
 	margin-left:-20px;
 	margin-right:10px;
@@ -85,4 +86,13 @@ body {
 	padding-right: 10px;
 }
 
+#logo {
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-bottom: 5px;
+}
+
+#guide-bar {
+	padding: 7px;
+}
 
