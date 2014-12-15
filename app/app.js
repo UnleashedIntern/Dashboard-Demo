@@ -14,6 +14,10 @@ app.config(['$routeProvider',
 				templateUrl: 'template/purchase.html',
 				controller: 'PurchaseCtrl'
 			}).
+			when('/Inventory', {
+				templateUrl: 'template/inventory.html',
+				controller: 'InventoryCtrl'
+			}).
 			otherwise({
 				redirectTo: '/Dashboard'
 			});
@@ -21,8 +25,10 @@ app.config(['$routeProvider',
 
 app.controller('DashboardCtrl', function($scope){
 	$(function () {
-	    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
-	
+	    //$.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+		//$.getJSON('json/dashboard.json', function (data) {	
+		$.getJSON('php/dashboard.php', function (data) {
+			//$.getJSON('json/test.json', function (data) {
 	        // Create the chart
 	        $('#container').highcharts('StockChart', {
 	
@@ -122,6 +128,75 @@ app.controller('PurchaseCtrl', function($scope){
 	                createChart();
 	            }
 	        });
+	    });
+	});
+});
+
+app.controller('InventoryCtrl', function($scope){
+	$(function () {
+	    $('#container').highcharts({
+	        chart: {
+	            type: 'column'
+	        },
+	        title: {
+	            text: 'Stacked column chart'
+	        },
+	        xAxis: {
+	            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+	        },
+	        yAxis: {
+	            min: 0,
+	            title: {
+	                text: 'Total fruit stock level'
+	            },
+	            stackLabels: {
+	                enabled: true,
+	                style: {
+	                    fontWeight: 'bold',
+	                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+	                }
+	            }
+	        },
+	        legend: {
+	            align: 'right',
+	            x: -70,
+	            verticalAlign: 'top',
+	            y: 20,
+	            floating: true,
+	            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+	            borderColor: '#CCC',
+	            borderWidth: 1,
+	            shadow: false
+	        },
+	        tooltip: {
+	            formatter: function () {
+	                return '<b>' + this.x + '</b><br/>' +
+	                    this.series.name + ': ' + this.y + '<br/>' +
+	                    'Total: ' + this.point.stackTotal;
+	            }
+	        },
+	        plotOptions: {
+	            column: {
+	                stacking: 'normal',
+	                dataLabels: {
+	                    enabled: true,
+	                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+	                    style: {
+	                        textShadow: '0 0 3px black, 0 0 3px black'
+	                    }
+	                }
+	            }
+	        },
+	        series: [{
+	            name: 'Warehouse 1',
+	            data: [5, 3, 4, 7, 2]
+	        }, {
+	            name: 'Warehouse 2',
+	            data: [2, 2, 3, 2, 1]
+	        }, {
+	            name: 'Warehouse 3',
+	            data: [3, 4, 4, 2, 5]
+	        }]
 	    });
 	});
 });
