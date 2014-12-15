@@ -74,3 +74,15 @@ body {
         color: #fff;
     }
 }
+
+#side-icon {
+	margin-left:-20px;
+	margin-right:10px;
+}
+
+#navbar-icon {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+

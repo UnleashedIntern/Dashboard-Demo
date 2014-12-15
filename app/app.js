@@ -200,3 +200,8 @@ app.controller('InventoryCtrl', function($scope){
 	    });
 	});
 });
+
+app.controller( 'timeCtrl', ['$scope', function($scope) {
+    $scope.date = new Date();
+}]);
+
